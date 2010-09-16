@@ -17,17 +17,18 @@ Partners can test their ping requests using the following URL:
 
 		http://pingtest.insuranceagents.com/pingtest
 
- Once you have finished ping testing to your satisfaction, please contact us to arrange for certification testing (includes ping and post).  After your submission process is certified, you will be provided with the production URL and will be able to go live with ping posting.
+ Once you have finished ping testing to your satisfaction, please contact us to arrange for certification testing (includes ping and post).  After your submission process is certified, you will be provided with the production URL and API key, and will be able to go live with ping posting.
 
 If you receive anything other than 200 OK or Successful 2xx http response, go to 
 		http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html 
 website to look up the error code.  Contact us for errors that are indicative of problems on our servers.
 
-or a ping request, you must provide the following parameters:
-
-    key	Password for posting 
-    action	Set to "ping" 
-    xml	Actual lead data in XML
+or a ping request, you must provide the following HTTP Post parameters:
+  
+    action  ping
+    key     (Your API Key)
+    a       (Your affiliate ID)
+    xml     (Actual lead data in XML)
 
 While testing your ping, The following fields may be left out or left blank in order to ping:
 fname, lname, addr, city, state, email, phone
@@ -103,7 +104,7 @@ If this field is present, it should be a comma-separated list of leg ids. In thi
     
 ...in addition to the normal ping-posting parameters. We would buy and take action on only these two legs listed.
 
-You can examine our company ID list at any time at:
+Our company ID list is contained within our schema document, in this repository.
 
 API Keys
 --------
